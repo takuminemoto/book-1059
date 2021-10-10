@@ -1,24 +1,50 @@
-# README
+# Book Drive
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+本の一覧機能、フォロー、感想などを表示します。
+本について簡単に調べられます。
+本を幅広い層により良く知ってもらい、本について共有します。
+普段本を読まない人でも、少し触れるだけで調べられ、興味を
+持ってもらえるようなレビューとSNSのサイトです。
+共有することによって、興味をより深められます。
 
-* Ruby version
+### サイトテーマ
 
-* System dependencies
+いつでもどこでも、本を知れる
 
-* Configuration
+### テーマを選んだ理由
 
-* Database creation
+僕自身、色々な本を読んでいき、素晴らしい経験となりました。
+ですが読書離れが叫ばれる中、気軽に読書に触れられるような
+サイトが作れないかと思い、開発しようと考えました。
+色んな方に本について知ってもらい、感想やオススメの本などを
+共有し、それから思いもよらない出会いがあるのではないか？と考え、選びました。
 
-* Database initialization
+### ターゲットユーザー
 
-* How to run the test suite
+新しい本を探している方
+流行の本を知りたい方
+どういう本を読みたいか分からない方
 
-* Services (job queues, cache servers, search engines, etc.)
+### 主な利用シーン
 
-* Deployment instructions
+本を調べたい時など
 
-* ...
+## 設計書
+<...>
+
+## チャレンジ要素一覧
+
+https://docs.google.com/spreadsheets/d/1DnzK3bItlUbsiMwvPRIox0i6wCU77XojpQ0vR4vbChc/edit#gid=0
+
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
