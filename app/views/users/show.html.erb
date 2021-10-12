@@ -1,0 +1,17 @@
+<div>
+  <h3><%= @user.name %></h3>
+  <%= image_tag('sample-author1.jpg') %>
+</div>
+
+<% @images.each do |image| %>
+<div>
+  <%= link_to image_path(image.id) do %>
+    <%= attachment_image_tag image, :image %>
+  <% end %>
+  <p>投稿画像：<%= image_tag('sample-author1.jpg') %></p>
+  <p>本のタイトル：<%= image.shop_name %></p>
+  <p>説明：<%= image.caption %></p>
+  <p>ユーザーネーム：<%= image.user.name %></p>
+</div>
+<% end %>
+<%= paginate @images %>
