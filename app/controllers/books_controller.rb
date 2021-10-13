@@ -8,11 +8,11 @@ class BooksController < ApplicationController
   @book = Book.new(book_params)
   @book.user_id = current_user.id
   if @book.save
-     redirect_to book_path(@book), notice: 'successfully new posting'
+   redirect_to book_path(@book), notice: 'successfully new posting'
   else
-    @books = Book.all
-    @user = current_user
-    render :index
+   @books = Book.all
+   @user = current_user
+   render :index
   end
  end
 

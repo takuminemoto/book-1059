@@ -3,6 +3,8 @@ class UsersController < ApplicationController
  def show
   @user = User.find(params[:id])
   @images = @user.images.page(params[:page]).reverse_order
+  @books = @user.books
+  @book = Book.new
  end
 
  def index

@@ -1,0 +1,32 @@
+<div class='container px-5 px-sm-0'>
+ <div class='row'>
+  <div class='col-md-5'>
+   <h1>情報</h1>
+   <table class='table'>
+    <tr>
+     <th>名前</th>
+     <th><%= user.name %></th>
+    </tr>
+    <tr>
+     <th>紹介</th>
+     <th><%= user.introduction %></th>
+    </tr>
+    <tr>
+     <th>
+      <%= link_to  edit_user_path(user.id) do  %>
+       <span class="fas fa-user-cog btn btn-outline-secondary btn-block"></span>
+      <% end %>
+     </th>
+    </tr>
+   </table>
+   <h1>新しい本</h1>
+   <%= form_with model:book, local:true do |f| %>
+    <h3>タイトル</h3>
+    <%= f.text_field :title %>
+    <h3>概要</h3>
+    <%= f.text_area :body %>
+    <%= f.submit 'Create Book', class:"btn btn-success" %>
+   <% end %>
+  </div>
+ </div>
+</div>

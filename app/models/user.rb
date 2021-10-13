@@ -4,13 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :images, dependent: :destroy
-  
+  attachment :image, destroy: false
+
+  has_many :books, dependent: :destroy
+  validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
+  validates :introduction, length: { maximum: 50 }
 end
-
-#database_authenticatable（パスワードの正確性を検証）
-#registerable（ユーザ登録や編集、削除）
-#recoverable（パスワードをリセット）
-#rememberable（ログイン情報を保存）
-#validatable（emailのフォーマットなどのバリデーション）
-
