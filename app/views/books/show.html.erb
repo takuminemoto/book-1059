@@ -1,15 +1,14 @@
 <div class="container px-5 px-sm-0">
  <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-5">
    <%= render 'books/index', book: @book_new, user: @user %>
   </div>
-  <div class='col-md-8 offset-md-1'>
-   <h2>本の詳細</h2>
+  <div class='col-md-6 offset-md-1'>
+   <h2>本 詳細</h2>
    <table class='table'>
     <td>
      <%= link_to user_path(@book.user.id) do %>
-      <%= attachment_image_tag @user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %>
-      <br><%=  @user.name  %>
+      <%=  @user.name  %>
      <% end %>
     </td>
     <td>
@@ -18,10 +17,10 @@
     <td><%= @book.body %></td>
     <% if @book.user_id == current_user.id %>
      <td>
-      <%= link_to "Edit",edit_book_path ,class:"btn btn-sm btn-success" %>
+      <%= link_to "編集",edit_book_path ,class:"btn btn-sm btn-success" %>
      </td>
      <td>
-      <%= link_to "Destroy",book_path(@book), method: :delete ,class:"btn btn-sm btn-danger" ,"data-confirm" => "本当に削除しますか？" %>
+      <%= link_to "消去",book_path(@book), method: :delete ,class:"btn btn-sm btn-danger" ,"data-confirm" => "本当に削除しますか？" %>
      </td>
     <% end %>
    </table>

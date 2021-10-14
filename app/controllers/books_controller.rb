@@ -1,14 +1,16 @@
 class BooksController < ApplicationController
-
+ before_action :authenticate_user!
+ before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+ 
  def new
   @book = Book.new
  end
-
+ 
  def create
   @book = Book.new(book_params)
   @book.user_id = current_user.id
   if @book.save
-   redirect_to book_path(@book), notice: 'successfully new posting'
+   redirect_to book_path(@book), notice: '新しく投稿しました。'
   else
    @books = Book.all
    @user = current_user
@@ -45,7 +47,7 @@ class BooksController < ApplicationController
   @book = Book.find(params[:id])
   @book.update(book_params)
   if @book.save
-   redirect_to book_path(@book), notice: 'post update successfully'
+   redirect_to book_path(@book), notice: '正常に更新しました。'
   else
    @books = Book.all
    @user = current_user

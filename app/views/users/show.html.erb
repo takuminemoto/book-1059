@@ -1,17 +1,30 @@
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag('sample-author1.jpg') %>
+<div class="container px-5 px-sm-0">
+ <div class="row">
+  <div class="col-md-5">
+   <%= render 'books/index', book: @book, user: @user %>
+  </div>
+  <div class='col-md-6 offset-md-1'>
+  <h2>本</h2>
+   <table class='table table-hover table-inverse'>
+    <tr>
+     <th= colspan ="3"></th>
+     <th></th>
+     <th>タイトル</th>
+     <th>紹介</th>
+    </tr>
+    <% @books.each do |book| %>
+     <tr>
+      <td>
+       <%= link_to user_path(book.user.id) do %>
+       <%= attachment_image_tag book.user, :image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size:'50x50' %>
+       <% end %>
+      </td>
+      <td><%= link_to book.title,book_path(book) %></td>
+      <td><%= book.body %></td>
+     </tr>
+    <% end %>
+   </table>
+  </div>
+ </div>
 </div>
 
-<% @images.each do |image| %>
-<div>
-  <%= link_to image_path(image.id) do %>
-    <%= attachment_image_tag image, :image %>
-  <% end %>
-  <p>投稿画像：<%= image_tag('sample-author1.jpg') %></p>
-  <p>本のタイトル：<%= image.shop_name %></p>
-  <p>説明：<%= image.caption %></p>
-  <p>ユーザーネーム：<%= image.user.name %></p>
-</div>
-<% end %>
-<%= paginate @images %>
