@@ -1,29 +1,39 @@
-<div class="container px-5 px-sm-0">
- <div class="row">
-  <div class="col-md-5">
-   <%= render 'books/index', book: @book_new, user: @user %>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>本人情報</h2>
+      <%= render 'users/info', user: @book.user %>
+      <h2 class="mt-3">新作</h2>
+      <%= render 'books/form', book: Book.new %>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+      <h2>本 詳細</h2>
+      <table class='table'>
+        <tr>
+          <td>
+            <%= link_to user_path(@book.user) do %>
+              <%= attachment_image_tag(@book.user, :image, :fill, 100, 100, fallback: "no-image-icon.jpg") %>
+              <br>
+              <%= @book.user.name %>
+            <% end %>
+          </td>
+          <td><%= link_to @book.title, book_path(@book) %></td>
+          <td><%= @book.body %></td>
+          <td class="favorite-btn">
+            <%= render "favorites/favorite-btn", book: @book %>
+          </td>
+          <td>コメント数: <%= @book.book_comments.count %></td>
+          <% if @book.user == current_user %>
+            <td>
+              <%= link_to '編集', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %>
+            </td>
+            <td>
+              <%= link_to '消去', book_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%>
+            </td>
+          <% end %>
+        </tr>
+      </table>
+      <%= render 'books/comment', book: @book,book_comment: @book_comment%>
+    </div>
   </div>
-  <div class='col-md-6 offset-md-1'>
-   <h2>本 詳細</h2>
-   <table class='table'>
-    <td>
-     <%= link_to user_path(@book.user.id) do %>
-      <%=  @user.name  %>
-     <% end %>
-    </td>
-    <td>
-     <%= link_to @book.title,book_path(@user.id) %>
-    </td>
-    <td><%= @book.body %></td>
-    <% if @book.user_id == current_user.id %>
-     <td>
-      <%= link_to "編集",edit_book_path ,class:"btn btn-sm btn-success" %>
-     </td>
-     <td>
-      <%= link_to "消去",book_path(@book), method: :delete ,class:"btn btn-sm btn-danger" ,"data-confirm" => "本当に削除しますか？" %>
-     </td>
-    <% end %>
-   </table>
-  </div>
- </div>
 </div>

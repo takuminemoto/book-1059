@@ -1,28 +1,24 @@
 <div class='container'>
- <div class='row'>
-  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-   <h2>本人情報</h2>
-   <% if @user.errors.any? %>
-    <%= @user.errors.count %>件のエラーが発生しました
-    <% @user.errors.full_messages.each do |message| %>
-     <%= message %>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h2>本人情報</h2>
+    <%= form_with model:@user, local:true do |f| %>
+      <%= render 'layouts/errors', obj: @user %>
+      <div class="form-group">
+      　<%= f.label :名前 %>
+      　<%= f.text_field :name, class: "form-control name" %>
+      </div>
+      <div class="form-group">
+      　<%= f.label :画像 %>
+      　<%= f.attachment_field :image, class: "form-control-file user_image" %>
+      </div>
+      <div class="form-group">
+      　<%= f.label :紹介 %>
+      　<%= f.text_area :introduction, class: "form-control introduction" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit class: 'btn btn-secondary' %>
+      </div>
     <% end %>
-   <% end %>
-   <%= form_with model:@user, local:true do |f| %>
-    <div class="form-group">
-     <%= f.label :名前 %>
-     <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
-    </div>
-    <div class="form-group">
-     <%= f.label :画像 %>
-     <%= f.attachment_field :image, placeholder: "" %>
-    </div>
-    <div class="form-group">
-     <%= f.label :紹介 %>
-     <%= f.text_area :introduction, autofocus: true, id:"inputName", placeholder:"紹介"%>
-    </div>
-    <%= f.submit '更新', class: "btn btn-secondary" %>
-   <% end %>
   </div>
- </div>
 </div>

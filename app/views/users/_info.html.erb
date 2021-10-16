@@ -1,0 +1,17 @@
+<table class='table'>
+  <tr>
+    <%= attachment_image_tag(user, :image, :fill, 100, 100, fallback: "no_image.jpg") %>
+  </tr>
+  <tr>
+    <th>名前</th>
+    <th><%= user.name %></th>
+  </tr>
+  <tr>
+    <th>感想</th>
+    <th><%= user.introduction %></th>
+  </tr>
+</table>
+
+<div class='row'>
+  <%= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+</div>
