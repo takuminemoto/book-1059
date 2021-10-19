@@ -9,7 +9,9 @@
       </td>
         <td><%= book_comment.comment %></td>
         <% if current_user == book_comment_user %>
-          <td><%= link_to '消去', book_book_comment_path(book_comment.book_id, book_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
+          <td>
+            <%= link_to '消去', book_book_comment_path(book_comment.book_id, book_comment.id), class: 'btn-sm btn-danger', method: :delete %>
+          </td>
         <% end %>
     </tr>
   <% end %>
