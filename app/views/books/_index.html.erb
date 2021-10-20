@@ -21,10 +21,11 @@
         <td class="favorite-btn">
           <%= render "favorites/favorite-btn", book: book %>
         </td>
-        <td class="comments-count">コメント数: <%= book.book_comments.count %></td>
+        <td class="comments-count">
+          コメント数: <%= book.book_comments.count %>
+        </td>
       </tr>
     <% end %>
-
   </tbody>
 </table>
 
