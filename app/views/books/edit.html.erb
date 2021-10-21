@@ -1,7 +1,12 @@
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      <h1>本 編集</h1>
+      <div class="button_wrapper">
+        <button type="button" class="btn btn-success btn-sm">
+          <h1>本 編集</h1>
+        </button>
+      </div>
+      <p></p>
       <%= render 'layouts/errors', obj: @book %>
       <%= render 'form', book: @book %>
       <%= link_to '詳細', book_path(@book), class: "book_#{@book.id}" %> |

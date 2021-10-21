@@ -11,7 +11,8 @@
 // about supported directives.
 //
 
-//= require jquery3
+//= require jquery
+//= require jquery.raty.js
 //= require popper
 //= require bootstrap-sprockets
 

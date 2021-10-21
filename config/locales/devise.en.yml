@@ -47,7 +47,7 @@ en:
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
     sessions:
       signed_in: "サインインしました。"
-      signed_out: "サインアウトしました。"
+      signed_out: "ログアウトしました。"
       already_signed_out: "既にサインアウトしています。"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
@@ -61,5 +61,5 @@ en:
       not_found: "not found"
       not_locked: "was not locked"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
+        one: "1つのエラーにより、この %{resource} の保存が禁止されました。:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
