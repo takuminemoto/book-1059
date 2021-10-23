@@ -1,0 +1,15 @@
+<% books.each do |book| %>
+  <tr>
+    <td class="book-evaluation" data-score="<%= book.evaluation %>">
+    </td>
+  </tr>
+<% end %>
+<script>
+  $('.book-evaluation').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

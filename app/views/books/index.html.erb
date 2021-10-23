@@ -4,9 +4,6 @@
     <div class='col-md-3'>
       <h2>本人情報</h2>
       <%= render 'users/info', user: current_user %>
-      <p>
-        <%= link_to 'レビュー', new_book_path(@book), class: "btn btn-sm btn-secondary" %>
-      </p>
       <h2 class="mt-3">新作</h2>
       <%= render 'form', book: @book %>
     </div>
