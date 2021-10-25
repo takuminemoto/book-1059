@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookCommentsController < ApplicationController
   before_action :authenticate_user!
 
@@ -27,4 +29,3 @@ class BookCommentsController < ApplicationController
     params.require(:book_comment).permit(:comment)
   end
 end
-

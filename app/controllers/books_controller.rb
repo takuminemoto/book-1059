@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class BooksController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
@@ -21,8 +22,9 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
+    @following_users = current_user.followings #[2,3]
+    @timeline_books = Book.where(user_id: @following_users.ids)
     @user = current_user
-    @all_ranks = Book.find(Favorite.group(:book_id).order('count(book_id) desc').limit(3).pluck(:book_id))
   end
 
   def show
@@ -71,3 +73,4 @@ class BooksController < ApplicationController
   end
 
 end
+
