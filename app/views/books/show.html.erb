@@ -18,6 +18,7 @@
           </td>
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
+
           <td class="favorite-btn">
             <%= render "favorites/favorite-btn", book: @book %>
           </td>
@@ -41,6 +42,7 @@
           <%= render 'book_comments/index', book: @book %>
         </table>
       </div>
+      <p class="books_show_kara"></p>
       <%= form_with model:[@book,@book_comment] do |f| %>
         <%= f.text_area :comment, size:"90x5" %>
         <div id="evaluate_stars">
@@ -49,6 +51,7 @@
         <%= f.submit '送信' %>
       <% end %>
       <script>
+      $('#evaluate_stars').empty();
         $('#evaluate_stars').raty({
           starOn: "<%= asset_path('star-on.png') %>",
           starOff: "<%= asset_path('star-off.png') %>",

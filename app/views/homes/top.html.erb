@@ -6,17 +6,14 @@
           <h1><strong>Book Drive</strong></h1>
         </div>
       </div>
-
-
-        <div class="btn-wrapper col-10 mx-auto">
-          <div class="row">
-            <%= link_to 'ログイン',new_user_session_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in" %>
-          </div>
-          <div class="row">
-            <%= link_to 'サインアップ',new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
-          </div>
+      <div class="btn-wrapper col-10 mx-auto">
+        <div class="row-login">
+          <%= link_to 'ログイン',new_user_session_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in" %>
         </div>
-
+        <div class="row-sign_up">
+          <%= link_to 'サインアップ',new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

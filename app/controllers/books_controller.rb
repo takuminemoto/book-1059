@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+
 class BooksController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_user, only: %i[edit update destroy]
 
   def new
     @book = Book.new
@@ -22,9 +23,11 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
-    @following_users = current_user.followings #[2,3]
+    @following_users = current_user.followings # [2,3]
     @timeline_books = Book.where(user_id: @following_users.ids)
     @user = current_user
+
+    @all_ranks = Book.find(Favorite.group(:book_id).order('count(book_id) desc').limit(3).pluck(:book_id))
   end
 
   def show
@@ -42,9 +45,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    unless @book.user_id == current_user.id
-      redirect_to books_path
-    end
+    redirect_to books_path unless @book.user_id == current_user.id
   end
 
   def update
@@ -67,10 +68,6 @@ class BooksController < ApplicationController
 
   def ensure_correct_user
     @book = Book.find(params[:id])
-    unless @book.user == current_user
-      redirect_to books_path
-    end
+    redirect_to books_path unless @book.user == current_user
   end
-
 end
-

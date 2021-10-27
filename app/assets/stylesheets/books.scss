@@ -6,3 +6,35 @@
    text-align:center;
 }
 
+.row_follow{
+  display: table;
+  margin: auto;
+}
+
+.mt-3{
+  display:flex;
+  border-top:solid;
+  line-height: 2.2;
+}
+
+.card-group{
+  font-size:x-large;
+  justify-content:space-evenly;
+}
+
+.ranking{
+  display:flex;
+  line-height: 2.2;
+  font-family:serif;
+  border-bottom: solid;
+  border-color: red;
+
+}
+
+.timeline-title {
+   display: flex;
+   margin: revert;
+   border-top:solid;
+   line-height: 3;
+ }
+

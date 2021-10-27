@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :contacts, only: %i[new create]
-  post '/confirm' => 'contacts#confirm'
-  post '/back' => 'contacts#back'
-  get '/done' => 'contacts#done'
+  post 'contacts/confirm' => 'contacts#confirm', as: 'confirm'
+  post 'contacts/back' => 'contacts#back', as: 'back'
+  get 'done' => 'contacts#done', as: 'done'
 end

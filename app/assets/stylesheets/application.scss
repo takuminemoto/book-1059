@@ -15,6 +15,8 @@
  */
 
  @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
 
  body {
   background-image: image-url("hoge.jpg");
@@ -27,14 +29,17 @@
     margin:auto;
    }
  }
- 
- .timeline-title {
+ .book_evaluate{
+   display:grid;
+   margin: inherit;
+ }
+
+
+ .books_show_kara{
    display: flex;
-   margin: revert;
+   flex-direction: column;
  }
- 
- .timeline-sub{
-   
+ .books_show_kara > div{
+   flex-basis: 200px;
  }
- 
- 
+
