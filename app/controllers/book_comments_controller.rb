@@ -9,10 +9,8 @@ class BookCommentsController < ApplicationController
     @book_comment = BookComment.new(book_comment_params)
     @book_comment.book_id = @book.id
     @book_comment.user_id = current_user.id
-    if @book_comment.save
-      redirect_to book_path(@book.id)
-    else
-      render 'books/show'
+    unless @book_comment.save
+      render 'error'  #app/views/book_comments/error.js.erbを参照
     end
   end
 
@@ -20,7 +18,7 @@ class BookCommentsController < ApplicationController
     @book = Book.find(params[:book_id])
     book_comment = @book.book_comments.find(params[:id])
     book_comment.destroy
-    redirect_to request.referer
+    # app/views/book_comments/destroy.js.erbを参照
   end
 
   private

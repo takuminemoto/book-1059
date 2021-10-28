@@ -29,6 +29,6 @@
       <%= link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-primary" %>
     <% end %>
   <% else %>
-    <%= link_to '設定',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+    <%= link_to '設定',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas edit_user_#{user.id}" %>
   <% end %>
 </div>
