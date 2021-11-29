@@ -8,7 +8,7 @@
     </td>
     <td><%= book_comment.comment %></td>
 
-    <td id="evaluate_stars_<%= book_comment.id %>" data-score="<%= book.evaluation %>">
+    <td id="evaluate_stars_<%= book_comment.id %>" data-score="<%= book_comment.evaluation %>">
     <script>
       $('#evaluate_stars_<%= book_comment.id %>').raty({
         readOnly: true,

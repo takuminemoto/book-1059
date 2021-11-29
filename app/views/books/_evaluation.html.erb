@@ -6,11 +6,12 @@
 <% end %>
 
 <script>
-  $('.book-evaluation').raty({
-    readOnly: true,
-    score: function() {
-      return $(this).attr('data-score');
-    },
-    path: '/assets/'
-  });
+　$('.book-evaluation').empty();
+    $('.book-evaluation').raty({
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+      },
+      path: '/assets/'
+    });
 </script>
