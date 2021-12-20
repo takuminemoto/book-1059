@@ -12,7 +12,7 @@
             <li><%= link_to 'マイページ',users_path,class: 'nav-link text-light' %></li>
             <li><%= link_to '本 一覧',books_path ,class: 'nav-link text-light'%></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'nav-link text-light' %></li>
-            <li><%= link_to 'お問い合わせ', new_contact_path ,class: 'nav-link text-light' %></li>
+            <li><%= link_to 'お問い合わせフォーム', new_contact_path ,class: 'nav-link text-light' %></li>
           <% else %>
             <li><%= link_to 'ホーム',root_path,class: 'nav-link text-light' %></li>
             <li><%= link_to '概要',about_path,class: 'nav-link text-light' %></li>
