@@ -11,7 +11,7 @@
       <%= render 'form', book: @book %>
     </div>
     <div class='col-md-8 offset-md-1'>
-      <h2>本 一覧 </h2>
+      <h2>本一覧 </h2>
       <%= render 'books/index', books: @books%>
       <h2 class="ranking">< 人気 ランキング ></h2>
       <% @all_ranks.each.with_index(1) do |book, i| %>
